@@ -1,3 +1,5 @@
+package components;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -32,15 +34,19 @@ public class Automaton extends ArrayList<Node> {
 	}
 
 	public void activate(Scanner sc) {
-		// TODO: Accept words
-		System.out.println("Tralala");
+		System.out.println("Please, enter a word to test, or enter \"exit\" to stop the automaton:");
 
-		String line = sc.nextLine().strip();
+		String line = sc.nextLine();
 		while(!line.equalsIgnoreCase("exit")) {
 			if (line.isEmpty()) {
-				line = sc.nextLine().strip();
+				line = sc.nextLine();
 				continue;
 			}
+
+			System.out.println("\"" + line + "\"" + (tryWord(line) ? "" : " not") + " accepted!\n");
+			line = sc.nextLine();
 		}
+
+		System.out.println("\n --- Automaton deactivated successfully! --- ");
 	}
 }

@@ -1,3 +1,5 @@
+package components;
+
 import java.util.Map;
 
 public class Node {
